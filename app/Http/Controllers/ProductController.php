@@ -40,7 +40,7 @@ class ProductController extends Controller
         $result = $modelProduct->activate($username, $code);
         return response()->json([
             'result' => $result == 1,
-            'message' => $result == 1 ? 'Product is activated.' : 'Product has been used by another person.',
+            'message' => $result == 1 ? 'Product is activated.' : 'Code had been used. Please repurchase.',
         ]);
     }
 }
