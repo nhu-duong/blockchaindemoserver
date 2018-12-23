@@ -16,8 +16,7 @@ class Product extends Model
     }
     
     public function activate($username, $code) {
-        $p = self::where('purchased_by', '=', $username)
-                ->where('code', '=', $code)->first();
+        $p = self::where('code', '=', $code)->first();
         if (empty($p)) {
             return -1;
         }
